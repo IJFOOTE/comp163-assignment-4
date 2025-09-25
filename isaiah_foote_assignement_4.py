@@ -70,3 +70,25 @@ if classes in all_classes:
 
 if classes not in all_classes:
     print("that course is not avalible")
+
+final_choice = None
+final_stats = study_hours, social_points, stress_level, current_gpa
+
+if final_choice is None:
+    final_choice = "Burnout Risk"
+if choice is not None and classes in all_classes:
+    if social_points > 40 and stress_level < 10:
+        final_choice = "Social Butterfly Scholar"
+        
+elif study_hours > 15 and stress_level < 40:
+        final_choice = "Dedicated Student"
+
+elif study_hours > 15 and stress_level > 40:
+        final_choice = "Extremely Hard Working Student"
+
+elif final_choice is not None:
+    print(f"Final Outcome: {final_choice}")
+else:
+    print("Final Outcome: Undetermined (Probably due to invalid initial choice).")
+
+print(f"Final Stats (Study Hours, Social Points, Stress Level, GPA): {final_stats}")
