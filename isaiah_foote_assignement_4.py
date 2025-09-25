@@ -51,96 +51,22 @@ else:
 
 Easy_Classes = ["English","History","biology","geography"]
 Hard_classes = ["Programming","Calculus","chemistry",]
+Medium_classes = ["English","History","Programming","chemistry",]
 all_classes = ["English","History","biology","geography","Programming","Calculus","chemistry",]
 
-if choice == "A":
-    choosen_class_1 = random.choice(all_classes)
-    if choosen_class_1 in Easy_Classes:
-        class_1 = True
-    elif choosen_class_1 not in Easy_Classes:
-        class_1 = False 
-
-    choosen_class_2 = random.choice(all_classes)
-    if choosen_class_2 in Easy_Classes:
-        class_2 = True
-    elif choosen_class_2 not in Easy_Classes:
-        class_2 = False 
-
-    choosen_class_3 = random.choice(all_classes)
-    if choosen_class_3 in Easy_Classes:
-        class_3 = True
-    elif choosen_class_3 not in Easy_Classes:
-        class_3 = False 
-    
-    choosen_class_4 = random.choice(all_classes)
-    if choosen_class_4 in Easy_Classes:
-        class_4 = True
-    elif choosen_class_4 not in Easy_Classes:
-        class_4 = False 
-    
-    if class_1 == True and class_2 == True and class_3 == True and class_4 == True:
-        print("This is the easy course")
-    elif class_1 == False or class_2 == False or class_3 == False or class_4 == False:
-        print("pick again")
-        
-elif choice == "B":
-    choosen_class_1 = random.choice(all_classes)
-    if choosen_class_1 in Hard_Classes:
-        class_1 = True
-    elif choosen_class_1 not in Hard_Classes:
-        class_1 = False 
-
-    choosen_class_2 = random.choice(all_classes)
-    if choosen_class_2 in Hard_Classes:
-        class_2 = True
-    elif choosen_class_2 not in Hard_Classes:
-        class_2 = False 
-
-    choosen_class_3 = random.choice(all_classes)
-    if choosen_class_3 in Easy_Classes:
-        class_3 = True
-    elif choosen_class_3 not in Easy_Classes:
-        class_3 = False 
-    
-    choosen_class_4 = random.choice(all_classes)
-    if choosen_class_4 in Easy_Classes:
-        class_4 = True
-    elif choosen_class_4 not in Easy_Classes:
-        class_4 = False 
-    
-    if class_1 == True and class_2 == True and class_3 == True and class_4 == True:
-        print("this is the Medium course try your best")
-    elif class_1 == False or class_2 == False or class_3 == False or class_4 == False:
-        print("pick again")
-
+if choice == "A" or "B":
+    Easy_Class_selection = Easy_Classes + Medium_classes
+    print(Easy_Class_selection)
+elif choice == "B" or C:
+    Medium_Class_selection = Easy_Classes + Medium_classes + Hard_classes
+    print(Medium_Class_selection)
 elif choice == "C":
+    Hard_Class_selection = Medium_classes + Hard_classes
+    print(Hard_Class_selection)
 
+classes = input("pick your classes")
+if classes in all_classes:
+    print("you picked avalible courses")
 
-    choosen_class_1 = random.choice(all_classes)
-    if choosen_class_1 in Hard_Classes:
-        class_1 = True
-    elif choosen_class_1 not in Hard_Classes:
-        class_1 = False 
-
-    choosen_class_2 = random.choice(all_classes)
-    if choosen_class_2 in Hard_Classes:
-        class_2 = True
-    elif choosen_class_2 not in Hard_Classes:
-        class_2 = False 
-
-    choosen_class_3 = random.choice(all_classes)
-    if choosen_class_3 in Hard_Classes:
-        class_3 = True
-    elif choosen_class_3 not in Easy_Classes:
-        class_3 = False 
-    
-    choosen_class_4 = random.choice(all_classes)
-    if choosen_class_4 in Hard_Classes:
-        class_4 = True
-    elif choosen_class_4 not in Easy_Classes:
-        class_4 = False 
-    
-    if class_1 == True and class_2 == True and class_3 == True and class_4 == True:
-        print("This is the hard course good luck")
-    elif class_1 == False or class_2 == False or class_3 == False or class_4 == False:
-        print("pick again")
+if classes not in all_classes:
+    print("that course is not avalible")
